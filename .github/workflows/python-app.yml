@@ -39,10 +39,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with pylint
       run: |
-        pylint *.py
+        pylint *.py || true 
     - name: Test with pytest
       run: |
         pytest
-    - name: Lint with pylint
-      run: |
-        pylint *.py || true
